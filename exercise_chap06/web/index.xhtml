@@ -24,20 +24,26 @@
 				</h:panelGroup>
 				<h:message for="year" styleClass="error"/>
                 <h:panelGroup>
-                    ※この記述を消してここに記入する
-                </h:panelGroup>
-                性別
-                <h:panelGroup>
-                    ※この記述を消してここに記入する
+				性別
+				<h:selectOneRadio value="#{bb.sex}" id="sex" required="true" requiredMessage="★必須" styleClass="inp">
+					<f:selectItem itemValue="1" itemLabel="男性"/>
+					<f:selectItem itemValue="2" itemLabel="女性"/>
+				</h:selectOneRadio>
+				<h:message for="sex" styleClass="errors"/>
                 </h:panelGroup>
                 お住まいの地域
-                ※この記述を消してここに記入する
+                <h:selectOneMenu value="#{bb.region}" styleClass="sel">
+					<f:selectItems value="#{bb.regionItems}"/>
+				</h:selectOneMenu>
                 関心のある分野（複数選択可）
                 <h:panelGroup>
-                    ※この記述を消してここに記入する
+                    <h:selectManyCheckbox value="#{bb.interest}" id="interest" required="true" requiredMessage="★必須" styleClass="inp">
+						<f:selectItems value="#{bb.interestItems}"/>
+					</h:selectManyCheckbox>
+					<h:message for="interest" styleClass="errors"/>
                 </h:panelGroup>
             </h:panelGrid>
-            <p>※この記述を消してここに記入する</p>
+            <p><h:selectBooleanCheckbox value="#{bb.magazine}" styleClass="inp" />メルマガを受け取る</p>
             <h:commandButton value="送　信"  action="#{bb.next()}" styleClass="btn"/>
         </h:form>
     </h:body>

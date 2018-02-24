@@ -14,12 +14,12 @@
                 <f:facet name="header">
                     以下の内容で受け付けました
                 </f:facet>
-                お名前
-                生年
-                性別
-                地域
-                関心分野
-                メルマガ
+                お名前<h:outputText value="#{bb.name}"/>
+                生年<h:outputText value="#{bb.year}"/>
+                性別<h:outputText value="#{bb.stringSex}"/>
+                地域<h:outputText value="#{bb.region}"/>
+                関心分野<h:outputText value="#{bb.stringInterests}"/>
+                メルマガ<h:outputText value="#{bb.stringMagazine}"/>
             </h:panelGrid>
             <h:link outcome="index" styleClass="link">［戻る］</h:link>
         </h:form>
