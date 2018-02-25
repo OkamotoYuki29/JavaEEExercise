@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>練習</title>
+        <h:outputStylesheet name="mystyle.css" library="css"/>
+    </h:head>
+    <h:body>
+        <h1>問診表</h1>
+        <h:form>
+            <h:panelGrid columns="2" styleClass="pg">
+				お名前
+				<h:panelGroup>
+					<h:inputText value="#{bb.name}" size="30" id="name" required="true" requiredMessage="★必須" label="お名前" styleClass="tx"/>
+					<h:message for="name" styleClass="errors"/>
+				</h:panelGroup>
+                体重（kg)
+				<h:panelGroup>
+					<h:inputText value="#{bb.weight}" size="5" id="weight" required="true" requiredMessage="★必須" converterMessage="★数値" label="体重" styleClass="tx"/>
+					<h:message for="weight" styleClass="errors"/>
+				</h:panelGroup>
+                身長（m)
+				<h:panelGroup>
+					<h:inputText value="#{bb.height}" size="5" id="height" required="true" requiredMessage="★必須" converterMessage="★数値" label="身長" styleClass="tx"/>
+					<h:message for="height" styleClass="errors"/>
+				</h:panelGroup>
+                特記事項
+				<h:panelGroup>
+					<h:inputTextarea value="#{bb.msg}" rows="3" cols="30" id="msg" required="true" requiredMessage="★必須" label="特記事項" styleClass="ta"/>
+					<h:message for="msg" styleClass="errors"/>
+				</h:panelGroup>
+            </h:panelGrid>
+            <h:commandButton value="送　信"  action="#{bb.next()}" styleClass="btn"/>
+        </h:form>
+    </h:body>
+</html>
+
